@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int penultimo = 0;
+    int ultimo = 1;
+    int atual;
+
+    if (n >= 1) {
+        printf("%d", penultimo);
+    }
+
+    if (n >= 2) {
+        printf(" %d", ultimo);
+    }
+
+    for (int i = 3; i <= n; i++) {
+        atual = penultimo + ultimo;
+        printf(" %d", atual);
+        penultimo = ultimo;
+        ultimo = atual;
+    }
+
+    return 0;
+}
